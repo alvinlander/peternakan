@@ -1410,20 +1410,19 @@
         <!-- start section -->
         <section class="section section--no-pb" id="section-youtube">
             <div class="video-container">
-                <iframe class="iframe-youtube" src="https://www.youtube.com/embed/fQFd9vbB_EA" frameborder="0"
+                <iframe class="iframe-youtube" src="https://www.youtube.com/embed/fQFd9vbB_EA" scrolling="yes" frameborder="0"
                     allowfullscreen></iframe>
             </div>
         </section>
         <!-- end section -->
 
         <!-- start section -->
-        <section class="section" id="section-special-offer">
+        <section class="section section--no-pt" id="section-special-offer">
             <div class="container">
                 <div class="section-heading section-heading--center" data-aos="fade">
                     <h2 class="__title"><span>Tawaran</span> Spesial</h2>
 
-                    <p>Latin words, combined with a handful of model sentence structures, to generate
-                        Lorem Ipsum which looks reasonable.</p>
+                    <p>Salah satu kepastian yang membuat nyaman pelanggan adalah produk kami yang berkualitas.</p>
                 </div>
 
                 <!-- start feature -->
@@ -1520,7 +1519,7 @@
             <div class="container">
                 <div class="special-offer special-offer--style-1" data-aos="zoom-in" data-aos-duration="600"
                     data-aos-offset="70">
-                    <h2 class="text text-center lazy" data-src="{{ asset('img/special_offer_text_bg.jpg') }}">Kambing
+                    <h2 class="text text-center lazy" data-src="{{ asset('img/background_tulisan.png') }}">Kambing
                         Spesial Untuk Indonesia</h2>
                 </div>
             </div>
@@ -1709,7 +1708,7 @@
 
                 <div data-aos="slide-up" data-aos-duration="800" data-aos-offset="50">
                     <img class="img-fluid  lazy" src="{{ asset('img/blank.gif') }}"
-                        data-src="{{ asset('img/img_world_map.png') }}" alt="demo" />
+                        data-src="{{ asset('img/peta.png') }}" alt="demo" />
                 </div>
             </div>
         </section>
