@@ -76,7 +76,7 @@
                     <div class="social-btns">
                         <a href="#"><i class="fontello-twitter"></i></a>
                         <a href="#"><i class="fontello-facebook"></i></a>
-                        <a href="#"><i class="fontello-linkedin-squared"></i></a>
+                        <a href="#"><i class="fontello-instagram"></i></a>
                     </div>
                 </div>
             </div>
