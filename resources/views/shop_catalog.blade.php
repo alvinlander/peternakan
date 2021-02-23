@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-7">
-                <h1 class="__title"><span>Trisula Joyo</span> Catalog</h1>
+                <h1 class="__title"><span>{{ $info->name }}</span> Catalog</h1>
 
                 <p>
                     Salah satu kepastian yang membuat nyaman pelanggan adalah produk kami yang
@@ -102,33 +102,15 @@
                             <div class="goods-filter__inner">
                                 <!-- start widget -->
                                 <div class="widget widget--categories">
-                                    <h4 class="h6 widget-title">CAtegories</h4>
+                                    <h4 class="h6 widget-title">Jenis Kambing</h4>
 
                                     <ul class="list">
+                                        @foreach ($category as $item)
                                         <li class="list__item">
-                                            <a class="list__item__link" href="#">Apples</a>
-                                            <span>(3)</span>
+                                            <a class="list__item__link" href="{{ url('product/'.$item->slug) }}">{{ $item->name}}</a>
+                                            <span>({{ count($item->goats) }})</span>
                                         </li>
-
-                                        <li class="list__item">
-                                            <a class="list__item__link" href="#">Oranges</a>
-                                            <span>(5)</span>
-                                        </li>
-
-                                        <li class="list__item">
-                                            <a class="list__item__link" href="#">Strawbery</a>
-                                            <span>(2)</span>
-                                        </li>
-
-                                        <li class="list__item">
-                                            <a class="list__item__link" href="#">Banana</a>
-                                            <span>(8)</span>
-                                        </li>
-
-                                        <li class="list__item">
-                                            <a class="list__item__link" href="#">Pumpkin </a>
-                                            <span>(5)</span>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <!-- end widget -->
@@ -146,348 +128,41 @@
                             <div class="__inner">
                                 <div class="row">
                                     <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="188" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/1.jpg') }}" alt="demo" />
-                                            </figure>
+                                        @foreach ($goats as $goat)
+                                        <div class="col-12 col-sm-6 col-lg-4">
+                                            <div class="__item">
+                                                <figure class="__image">
+                                                    <img class="lazy" width="188" src="{{ asset('img/blank.gif') }}"
+                                                        data-src="{{ url('storage/'.$goat->img_goat)}}" alt="demo" />
+                                                </figure>
 
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Oranges</a>
-                                                </h4>
+                                                <div class="__content">
+                                                    <h4 class="h6 __title"><a href="#">{{ $goat->name }}</a>
+                                                    </h4>
 
-                                                <div class="__category"><a href="#">Fruits</a>
+                                                    <div class="__category"><a href="#">{{ $goat->category->name }}</a>
+                                                    </div>
+
+                                                    <div class="product-price">
+                                                        @if (isset($goat->price_after_discount))
+                                                        <span class="product-price__item product-price__item--new">Rp {{number_format($goat->price_after_discount ,2,',','.')}}</span>
+                                                        <span class="product-price__item product-price__item--old">Rp {{number_format($goat->price ,2,',','.')}}</span>
+                                                        @else
+                                                            <span class="product-price__item product-price__item--new">Rp {{number_format($goat->price ,2,',','.')}}</span>
+                                                        @endif
+                                                    </div>
+
+                                                    <a class="custom-btn custom-btn--medium custom-btn--style-1"
+                                                    href="{{ "https://wa.me/".$info->phone."?text=Saya tertarik ingin bertanya kambing ".$goat->name." jenis ".$goat->category->name.". Terima kasih 😊" }}" target="_blank"><i
+                                                            class="fontello-shopping-bag"></i>Beli</a>
                                                 </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--new">3,80
-                                                        $</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- end item -->
+                                        <!-- end item -->
+                                    @endforeach
 
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="180" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/2.jpg') }}" alt="demo" />
-                                            </figure>
 
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Brocoli</a>
-                                                </h4>
 
-                                                <div class="__category"><a href="#">Vegetables</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--new">3,35
-                                                        $</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
-
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="160" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/3.jpg') }}" alt="demo" />
-                                            </figure>
-
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Red
-                                                        Apple</a></h4>
-
-                                                <div class="__category"><a href="#">Fruits</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--new">0,99
-                                                        $</span>
-                                                    <span
-                                                        class="product-price__item product-price__item--old">2200$</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
-
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="190" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/4.jpg') }}" alt="demo" />
-                                            </figure>
-
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Strawberry</a>
-                                                </h4>
-
-                                                <div class="__category"><a href="#">Fruits</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--new">2,10
-                                                        $</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
-
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="180" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/5.jpg') }}" alt="demo" />
-                                            </figure>
-
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Fresh
-                                                        Banana</a></h4>
-
-                                                <div class="__category"><a href="#">Vegetables</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--new">10,99
-                                                        $</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
-
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="180" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/6.jpg') }}" alt="demo" />
-                                            </figure>
-
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Big
-                                                        Pumpkin</a></h4>
-
-                                                <div class="__category"><a href="#">Fruits</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--new">8,15
-                                                        $</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
-
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="250" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/7.jpg') }}" alt="demo" />
-                                            </figure>
-
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Organic
-                                                        Tomato</a></h4>
-
-                                                <div class="__category"><a href="#">Vegetables</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--old">6,68
-                                                        $</span>
-                                                    <span class="product-price__item product-price__item--new">6,12
-                                                        $</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
-
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="236" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/8.jpg') }}" alt="demo" />
-                                            </figure>
-
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Organic
-                                                        Peach</a></h4>
-
-                                                <div class="__category"><a href="#">Vegetables</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--old">6,68
-                                                        $</span>
-                                                    <span class="product-price__item product-price__item--new">6,12
-                                                        $</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
-
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="188" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/1.jpg') }}" alt="demo" />
-                                            </figure>
-
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Oranges</a>
-                                                </h4>
-
-                                                <div class="__category"><a href="#">Fruits</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--new">3,80
-                                                        $</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
-
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="180" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/2.jpg') }}" alt="demo" />
-                                            </figure>
-
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Brocoli</a>
-                                                </h4>
-
-                                                <div class="__category"><a href="#">Vegetables</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--new">3,35
-                                                        $</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
-
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="160" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/3.jpg') }}" alt="demo" />
-                                            </figure>
-
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Red
-                                                        Apple</a></h4>
-
-                                                <div class="__category"><a href="#">Fruits</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--new">0,99
-                                                        $</span>
-                                                    <span
-                                                        class="product-price__item product-price__item--old">2200$</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
-
-                                    <!-- start item -->
-                                    <div class="col-12 col-sm-6 col-lg-4">
-                                        <div class="__item">
-                                            <figure class="__image">
-                                                <img class="lazy" width="190" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/goods_img/4.jpg') }}" alt="demo" />
-                                            </figure>
-
-                                            <div class="__content">
-                                                <h4 class="h6 __title"><a href="#">Strawberry</a>
-                                                </h4>
-
-                                                <div class="__category"><a href="#">Fruits</a>
-                                                </div>
-
-                                                <div class="product-price">
-                                                    <span class="product-price__item product-price__item--new">2,10
-                                                        $</span>
-                                                </div>
-
-                                                <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#"><i
-                                                        class="fontello-shopping-bag"></i>Add
-                                                    to cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end item -->
                                 </div>
                             </div>
                         </div>
@@ -497,18 +172,9 @@
 
                         <!-- start pagination -->
                         <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item"><a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">4</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#"><i
-                                            class="fontello-angle-right"></i></a></li>
-                            </ul>
+                            {{ $goats->links('vendor.pagination.custom') }}
                         </nav>
+                        {{-- {{ $data->links('vendor.pagination.custom') }} --}}
                         <!-- end pagination -->
                     </div>
                 </div>

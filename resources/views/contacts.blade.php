@@ -82,7 +82,7 @@
                                     <h4 class="__title">Alamat</h4>
 
                                     <p>
-                                        523 Sylvan Ave, 5th Floor Mountain View, CA 94041USA
+                                        {{ $info->address }}
                                     </p>
                                 </div>
                             </div>
@@ -95,8 +95,9 @@
 
                                     <h4 class="__title">Telepon</h4>
 
+
                                     <p>
-                                        +1 (234) 56789,<br>+1 987 654 3210
+                                        <a href="tel:{{ $info->phone }}" style="text-decoration: none">{{ $info->phone }}</a>
                                     </p>
                                 </div>
                             </div>
@@ -109,7 +110,8 @@
 
                                     <h4 class="__title">e-mail</h4>
 
-                                    <p><a href="mailto:support@agrocompany.com">support@agrocompany.com</a>
+                                    <p>
+                                        <a href="mailto:{{ $info->email }}" style="text-decoration: none">{{ $info->email }}</a>
                                     </p>
                                 </div>
                             </div>

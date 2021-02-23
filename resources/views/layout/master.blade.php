@@ -50,6 +50,7 @@
             _html.classList.add(isTouch ? "touch" : "no-touch");
       </script>
       <script type="text/javascript" src="{{ asset('js/device.min.js') }}"></script>
+      @stack('style')
 </head>
 
 <body>
@@ -79,6 +80,7 @@
                   }(window, document, 'script', 'ga'));
             ga('create', 'UA-XXXXX-X', 'auto'); ga('send', 'pageview');
       </script>
+      @stack('script')
 </body>
 
 </html>

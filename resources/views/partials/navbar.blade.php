@@ -7,7 +7,7 @@
             <div class="row align-items-center justify-content-between no-gutters">
 
                   <a class="top-bar__logo site-logo" href="{{ url('/') }}">
-                        <img class="img-fluid" src="{{ asset('img/site_logo.png') }}" alt="demo" />
+                        <img class="img-fluid" src="{{ url('storage/'.$info->url_logo) }}" alt="demo" />
                   </a>
 
                   <a id="top-bar__navigation-toggler"
@@ -20,19 +20,19 @@
                                     role="navigation">
                                     <ul>
 
-                                          <li class="active">
+                                          <li class="{{ request()->is('/') ? "active" : "" }}">
                                                 <a href="{{ url('/') }}">Beranda</a>
                                           </li>
 
-                                          <li>
+                                          <li class="{{ request()->is('product','product/*') ? "active" : "" }}">
                                                 <a href="{{ url('/product') }}">Produk</a>
                                           </li>
 
-                                          <li>
+                                          <li class="{{ request()->is('gallery') ? "active" : "" }}">
                                                 <a href="{{ url('/gallery') }}">Galeri</a>
                                           </li>
 
-                                          <li>
+                                          <li class="{{ request()->is('about') ? "active" : "" }}">
                                                 <a href="{{ url('/about') }}">Tentang</a>
                                           </li>
 

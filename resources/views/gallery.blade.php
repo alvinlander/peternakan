@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-7">
-                    <h1 class="__title"><span>Trisula Joyo</span> Galeri</h1>
+                    <h1 class="__title"><span>{{ $info->name }}</span> Galeri</h1>
 
                     <p>
                         Kami pastikan anda tidak melewatkan setiap sudut dari apa yang telah kami
@@ -84,198 +84,21 @@
                             <div class="col-12 col-sm-6 col-lg-4  js-isotope__sizer"></div>
 
                             <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-1">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/1.jpg') }}" alt="demo" />
+                            @foreach ($gallery as $item)
+                                <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-{{ $loop->iteration }}">
+                                    <div class="__item">
+                                        <figure class="__image">
+                                            <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ url('storage/'.$item->url_gallery) }}" alt="demo" />
 
-                                        <div class="__content">
-                                            <h5 class="__content__title">Strawberry</h5>
-                                        </div>
+                                            <div class="__content">
+                                                <h5 class="__content__title">{{ $item->name }}</h5>
+                                            </div>
 
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/1.jpg') }}"></a>
-                                    </figure>
+                                            <a class="__link" data-fancybox="gallery" href="{{ url('storage/'.$item->url_gallery) }}"></a>
+                                        </figure>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-2">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/2.jpg') }}" alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">cabbage</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/2.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-3">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/3.jpg') }}" alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">Chili pepper</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/3.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-4">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/4.jpg') }}" alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">basil</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/4.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-5">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/5.jpg') }}" alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">corn</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/5.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-1">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/6.jpg') }}" alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">gardens</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/6.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-2">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/7.jpg') }}" alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">the crop</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/7.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-3">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/8.jpg') }}" alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">blueberry</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/8.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-4">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/9.jpg') }}" alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">cow</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/9.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-5">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/10.jpg') }}"
-                                            alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">asparagus</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/10.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-2">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/11.jpg') }}"
-                                            alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">pig</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/11.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-4">
-                                <div class="__item">
-                                    <figure class="__image">
-                                        <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/gallery_img/12.jpg') }}"
-                                            alt="demo" />
-
-                                        <div class="__content">
-                                            <h5 class="__content__title">grapes</h5>
-                                        </div>
-
-                                        <a class="__link" data-fancybox="gallery" href="{{ asset('img/gallery_img/12.jpg') }}"></a>
-                                    </figure>
-                                </div>
-                            </div>
+                            @endforeach
                             <!-- end item -->
                         </div>
                     </div>

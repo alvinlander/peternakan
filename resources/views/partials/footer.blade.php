@@ -8,8 +8,10 @@
         </div>
 
         <center>
+            <a href="{{ url('/contact') }}">
             <button class="custom-btn custom-btn--medium custom-btn--style-3 contact-form wide" type="submit"
                 role="button">Hubungi Kami</button>
+            </a>
         </center>
     </div>
 </section>
@@ -22,7 +24,7 @@
                 <div class="footer__item">
                     <a class="site-logo" href="{{ url('/') }}">
                         <img class="img-fluid  lazy" src="{{ asset('img/blank.gif') }}"
-                            data-src="{{ asset('img/site_logo.png') }}" alt="demo" />
+                            data-src="{{ url('storage/'.$info->url_logo) }}" alt="demo" />
                     </a>
                 </div>
             </div>
@@ -35,7 +37,7 @@
                                 <h5 class="footer__item__title h6">Menu</h5>
 
                                 <ul>
-                                    <li class="active"><a href="{{ url('/') }}">Beranda</a>
+                                    <li><a href="{{ url('/') }}">Beranda</a>
                                     </li>
                                     <li><a href="{{ url('/about') }}">Tentang</a></li>
                                     <li><a href="{{ url('/gallery') }}">Galeri</a></li>
@@ -46,7 +48,7 @@
                                 <h5 class="footer__item__title h6">Shop</h5>
 
                                 <ul>
-                                    <li><a href="{{ url('/product') }}">Katalog</a></li>
+                                    <li ><a href="{{ url('/product') }}">Katalog</a></li>
                                     <li><a href="{{ url('/contact') }}">Hubungi Kami</a></li>
                                 </ul>
                             </div>
@@ -61,22 +63,22 @@
 
                     <address>
                         <p>
-                            523 Sylvan Ave, 5th Floor Mountain View, CA 940 USA
+                            {{ $info->address }}
                         </p>
 
                         <p>
-                            +1 (234) 56789, +1 987 654 3210
+                            <a href="tel:{{ $info->phone }}" style="text-decoration: none">{{ $info->phone }}</a>
                         </p>
 
                         <p>
-                            <a href="mailto:support@agrocompany.com">support@agrocompany.com</a>
+                            <a href="mailto:{{ $info->email }}" style="text-decoration: none">{{ $info->email }}</a>
                         </p>
                     </address>
 
                     <div class="social-btns">
-                        <a href="#"><i class="fontello-twitter"></i></a>
-                        <a href="#"><i class="fontello-facebook"></i></a>
-                        <a href="#"><i class="fontello-instagram"></i></a>
+                        <a href="{{ $info->twitter ? $info->twitter : "#" }}"><i class="fontello-twitter"></i></a>
+                        <a href="{{ $info->facebook ? $info->facebook : "#" }}"><i class="fontello-facebook"></i></a>
+                        <a href="{{ $info->instagram ? $info->instagram : "#" }}"><i class="fontello-instagram"></i></a>
                     </div>
                 </div>
             </div>

@@ -1276,13 +1276,10 @@
                         <div class="col-12 col-md-10 col-xl-8">
                             <div class="__name">PETERNAKAN</div>
 
-                            <h2 class="__title text-white">TRISULA JOYO FARM</h2>
+                            <h2 class="__title text-white">{{ $info->name }}</h2>
 
                             <p class="text-center">
-                                Trisula Joyo Farm adalah Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Fugiat, accusantium quaerat. Expedita eos eius
-                                nobis porro temporibus, corrupti tenetur in tempore magni impedit
-                                debitis reprehenderit doloremque. Cumque magni voluptate nam!
+                                {{ $info->short_desc }}
                             </p>
 
                             <p class="text-center mt-5 mt-md-10">
@@ -1337,7 +1334,7 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-auto col-xl-8">
-                            <div class="__name">AgRO</div>
+                            <div class="__name">Agro</div>
 
                             <h2 class="__title text-white">Live<span style="color: #fcdb5a">stock</span></h2>
 
@@ -1410,7 +1407,7 @@
         <!-- start section -->
         <section class="section section--no-pb" id="section-youtube">
             <div class="video-container">
-                <iframe class="iframe-youtube" src="https://www.youtube.com/embed/fQFd9vbB_EA" scrolling="yes" frameborder="0"
+                <iframe class="iframe-youtube" src="{{ $info->link_highlight_youtube ?  $info->link_highlight_youtube : "#"}}" scrolling="yes" frameborder="0"
                     allowfullscreen></iframe>
             </div>
         </section>
@@ -1573,17 +1570,7 @@
 
                     <div class="col-12 col-lg-4">
                         <div data-aos="fade-right" data-aos-delay="400" data-aos-duration="500" ddata-aos-offset="100">
-                            <p>
-                                Latin words, combined with a handful of model sentence structures,
-                                to generate Lorem Ipsum which looks reasonable.
-                            </p>
-
-                            <p>
-                                The generated Lorem Ipsum is therefore always free from repetition
-                                injected humour, or non-characteristic words etc. Contrary to
-                                popular belief, Lorem Ipsum is not simply random text. It has
-                                roots in a piece of classi
-                            </p>
+                            {{ $info->short_desc }}
 
                             <p class="d-sm-none">
                                 <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#">More about</a>
@@ -1615,7 +1602,7 @@
                                         </div>
 
                                         <div class="d-table-cell align-middle">
-                                            <p class="__count js-count" data-from="0" data-to="19500">19 500</p>
+                                            <p class="__count js-count" data-from="0" data-to={{ $info->sold_unit }}>{{ $info->sold_unit }}</p>
 
                                             <p class="__title">Unit Terjual</p>
                                         </div>
@@ -1637,7 +1624,7 @@
                                         </div>
 
                                         <div class="d-table-cell align-middle">
-                                            <p class="__count js-count" data-from="0" data-to="2720">2 720</p>
+                                            <p class="__count js-count" data-from="0" data-to="{{ $info->avail_stock }}">{{ $info->avail_stock }}</p>
 
                                             <p class="__title">Kambing Tersedia</p>
                                         </div>
@@ -1659,7 +1646,7 @@
                                         </div>
 
                                         <div class="d-table-cell align-middle">
-                                            <p class="__count js-count" data-from="0" data-to="10000">10 000</p>
+                                            <p class="__count js-count" data-from="0" data-to="{{ $info->farm_area }}">{{ $info->farm_area }}</p>
 
                                             <p class="__title">Luas Peternakan</p>
                                         </div>
@@ -1681,7 +1668,7 @@
                                         </div>
 
                                         <div class="d-table-cell align-middle">
-                                            <p class="__count js-count" data-from="0" data-to="128">128</p>
+                                            <p class="__count js-count" data-from="0" data-to="{{ $info->breeders}}">{{ $info->breeders}}</p>
 
                                             <p class="__title">Jumlah Peternakan</p>
                                         </div>
@@ -1725,39 +1712,30 @@
                 <div class="review review--slider">
                     <div class="js-slick" data-slick='{"autoplay": true, "arrows": false, "dots": true, "speed": 1000}'>
                         <!-- start item -->
-                        <div class="review__item">
-                            <div class="review__item__text">
-                                <p>
-                                    <i>Latin words, combined with a handful of model sentence
-                                        structures, to generate Lorem Ipsum which looks
-                                        reasonable. The generated Lorem Ipsum is therefore
-                                        always free from repetition injected humour, or
-                                        non-characteristic words etc. Contrary to popular
-                                        belief, Lorem Ipsum is not simply random text. It has
-                                        roots in a piece of classical Latin literature from 45
-                                        BC, making it over</i>
-                                </p>
-                            </div>
+                        @foreach ($testi as $item)
+                            <div class="review__item">
+                                <div class="review__item__text">
+                                        {!! $item->testimoni !!}
+                                </div>
 
-                            <div class="review__item__author  d-table">
-                                <div class="d-table-cell align-middle">
-                                    <div class="review__item__author-image">
-                                        <img class="circled" src="img/ava.png" alt="ava" />
+                                <div class="review__item__author  d-table">
+                                    <div class="d-table-cell align-middle">
+                                        <div class="review__item__author-image">
+                                            <img class="circled" src="{{ url('storage/'.$item->img_testimoni) }}" alt="ava" width="64" />
+                                        </div>
+                                    </div>
+
+                                    <div class="d-table-cell align-middle">
+                                        <span class="review__item__author-name"><strong>{{$item->name}}</strong></span>
+                                        <span class="review__item__author-position">/{{$item->title}}</span>
                                     </div>
                                 </div>
-
-                                <div class="d-table-cell align-middle">
-                                    <span class="review__item__author-name"><strong>Terens
-                                            Smith</strong></span>
-                                    <span class="review__item__author-position">/CEO
-                                        AntalAgro</span>
-                                </div>
                             </div>
-                        </div>
+                        @endforeach
                         <!-- end item -->
 
                         <!-- start item -->
-                        <div class="review__item">
+                        {{-- <div class="review__item">
                             <div class="review__item__text">
                                 <p>
                                     <i>Latin words, combined with a handful of model sentence
@@ -1796,7 +1774,7 @@
                                         AntalAgro</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                         <!-- end item -->
                     </div>
                 </div>

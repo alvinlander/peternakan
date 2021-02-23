@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-7">
-                    <h1 class="__title"><span>Tentang</span> Trisula Joyo</h1>
+                    <h1 class="__title"><span>Tentang</span> {{ $info->name }}</h1>
 
                     <p>
                         Kami besar karena kepercayaan pelanggan dan kami memiliki visi untuk
@@ -77,39 +77,9 @@
 
                 <div class="row">
                     <div class="col-12 col-lg-6 col-xl-8">
+                        {!! $info->long_desc!!}
                         <p>
-                            We believe in helping brands create through strategy, <a href="#">story-telling, digital
-                                products</a>, and integrated
-                            experiences on web, mobile, and in the world. And you're here, friends,
-                            because you also believe.
-                        </p>
-
-                        <p>
-                            Our team has a passion for making things with real value. This has led
-                            us to assemble a multi-talented group that can do just about anything:
-                            from building sets to photographing food, crafting websites to
-                            developing apps, beautiful design to adventure cinematography.
-                            Designers, engineers, creatives, makers, developers, artists, unite.
-                            Let’s do something real-special together.
-                        </p>
-
-                        <p>
-                            Our team has a passion for making things with real value. This has led
-                            us to assemble a multi-talented group that can do just about anything:
-                            from building sets to photographing food, crafting websites.
-                        </p>
-
-                        <p>
-                            Our team has a passion for making things with real value. This has led
-                            us to assemble a multi-talented group that can do just about anything:
-                            from building sets to photographing food, crafting websites to
-                            developing apps, beautiful design to adventure cinematography.crafting
-                            websites to developing apps, beautiful design to adventure
-                            cinematography.
-                        </p>
-
-                        <p>
-                            <a class="custom-btn custom-btn--medium custom-btn--style-1" href="#">Hubungi Kami</a>
+                            <a class="custom-btn custom-btn--medium custom-btn--style-1" href="{{ url('/contact') }}">Hubungi Kami</a>
                         </p>
                     </div>
                 </div>
@@ -136,7 +106,7 @@
                                         </div>
 
                                         <div class="d-table-cell align-middle">
-                                            <p class="__count js-count" data-from="0" data-to="19500">19 500</p>
+                                            <p class="__count js-count" data-from="0" data-to={{ $info->sold_unit }}>{{ $info->sold_unit }}</p>
 
                                             <p class="__title">Unit Terjual</p>
                                         </div>
@@ -158,7 +128,7 @@
                                         </div>
 
                                         <div class="d-table-cell align-middle">
-                                            <p class="__count js-count" data-from="0" data-to="2720">2 720</p>
+                                            <p class="__count js-count" data-from="0" data-to="{{ $info->avail_stock }}">{{ $info->avail_stock }}</p>
 
                                             <p class="__title">Jumlah Kambing Tersedia</p>
                                         </div>
@@ -180,7 +150,7 @@
                                         </div>
 
                                         <div class="d-table-cell align-middle">
-                                            <p class="__count js-count" data-from="0" data-to="10000">10 000</p>
+                                            <p class="__count js-count" data-from="0" data-to="{{ $info->farm_area }}">{{ $info->farm_area }}</p>
 
                                             <p class="__title">Luas Peternakan</p>
                                         </div>
@@ -202,7 +172,7 @@
                                         </div>
 
                                         <div class="d-table-cell align-middle">
-                                            <p class="__count js-count" data-from="0" data-to="128">128</p>
+                                            <p class="__count js-count" data-from="0" data-to="{{ $info->breeders}}">{{ $info->breeders}}</p>
 
                                             <p class="__title">Jumlah Peternakan</p>
                                         </div>
