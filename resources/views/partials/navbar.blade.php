@@ -1,13 +1,13 @@
 <header id="top-bar" class="top-bar top-bar--style-1">
       <div class="top-bar__bg"
-            style="background-color: #24292c;background-image: url({{ asset('img/top_bar_bg-1.jpg') }});background-repeat: no-repeat;background-position: left bottom;">
+            style="background-color: #24292c;background-image: url({{ asset('img/image_navbar_responsif.png') }});background-repeat: no-repeat;background-position: left bottom;">
       </div>
 
-      <div class="container-fluid">
+      <div class="container-fluid mt-1">
             <div class="row align-items-center justify-content-between no-gutters">
 
                   <a class="top-bar__logo site-logo" href="{{ url('/') }}">
-                        <img class="img-fluid" src="{{ url('storage/'.$info->url_logo) }}" alt="demo" />
+                        <img class="img-fluid" src="{{ url('storage/'.$info->url_logo) }}" alt="demo" width="120"/>
                   </a>
 
                   <a id="top-bar__navigation-toggler"

@@ -20,11 +20,72 @@
 
     <!-- start main -->
     <main role="main">
-        <!-- Common styles
+        <!-- start section -->
+        <section class="section">
+            <div class="container">
+                <!-- start company contacts -->
+                <div class="company-contacts  text-center">
+                    <div class="__inner">
+                        <div class="row justify-content-around">
+                            <!-- start item -->
+                            <div class="col-12 col-md-4 col-lg-3">
+                                <div class="__item">
+                                    <i class="__ico fontello-location"></i>
+
+                                    <h4 class="__title">Alamat</h4>
+
+                                    <p>
+                                        {{ $info->address }}
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- end item -->
+
+                            <!-- start item -->
+                            <div class="col-12 col-md-4 col-lg-3">
+                                <div class="__item">
+                                    <i class="__ico fontello-phone"></i>
+
+                                    <h4 class="__title">Telepon</h4>
+
+
+                                    <p>
+                                        <a href="https://wa.me/{{ $info->phone }}" style="text-decoration: none">{{ $info->phone }}</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- end item -->
+
+                            <!-- start item -->
+                            <div class="col-12 col-md-4 col-lg-3">
+                                <div class="__item">
+                                    <i class="__ico fontello-mail-1"></i>
+
+                                    <h4 class="__title">e-mail</h4>
+
+                                    <p>
+                                        <a href="mailto:{{ $info->email }}" style="text-decoration: none">{{ $info->email }}</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- end item -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end company contacts -->
+            </div>
+        </section>
+        <!-- end section -->
+    @endsection
+
+@push('style')
+    <!-- Common styles
         ================================================== -->
         <link rel="stylesheet" href="{{ asset('css/style.min.css') }}" type="text/css">
+@endpush
 
-        <!-- Load lazyLoad scripts
+@push('script')
+    <!-- Load lazyLoad scripts
         ================================================== -->
         <script>
             (function(w, d) {
@@ -66,61 +127,4 @@
             }(window, document));
 
         </script>
-
-        <!-- start section -->
-        <section class="section">
-            <div class="container">
-                <!-- start company contacts -->
-                <div class="company-contacts  text-center">
-                    <div class="__inner">
-                        <div class="row justify-content-around">
-                            <!-- start item -->
-                            <div class="col-12 col-md-4 col-lg-3">
-                                <div class="__item">
-                                    <i class="__ico fontello-location"></i>
-
-                                    <h4 class="__title">Alamat</h4>
-
-                                    <p>
-                                        {{ $info->address }}
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-md-4 col-lg-3">
-                                <div class="__item">
-                                    <i class="__ico fontello-phone"></i>
-
-                                    <h4 class="__title">Telepon</h4>
-
-
-                                    <p>
-                                        <a href="tel:{{ $info->phone }}" style="text-decoration: none">{{ $info->phone }}</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- end item -->
-
-                            <!-- start item -->
-                            <div class="col-12 col-md-4 col-lg-3">
-                                <div class="__item">
-                                    <i class="__ico fontello-mail-1"></i>
-
-                                    <h4 class="__title">e-mail</h4>
-
-                                    <p>
-                                        <a href="mailto:{{ $info->email }}" style="text-decoration: none">{{ $info->email }}</a>
-                                    </p>
-                                </div>
-                            </div>
-                            <!-- end item -->
-                        </div>
-                    </div>
-                </div>
-                <!-- end company contacts -->
-            </div>
-        </section>
-        <!-- end section -->
-    @endsection
+@endpush

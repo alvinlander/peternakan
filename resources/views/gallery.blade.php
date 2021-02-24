@@ -21,10 +21,52 @@
 
     <!-- start main -->
     <main role="main">
-        <!-- Common styles
+        <!-- start section -->
+        <section class="section">
+            <div class="container">
+
+                <div class="gallery gallery--style-1">
+                    <div class="__inner">
+                        <div class="row  js-isotope" data-isotope-options='{
+              "itemSelector": ".js-isotope__item",
+              "transitionDuration": "0.8s",
+              "percentPosition": "true",
+              "masonry": { "columnWidth": ".js-isotope__sizer" }
+             }'>
+
+                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__sizer"></div>
+
+                            <!-- start item -->
+                            @foreach ($gallery as $item)
+                                <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-{{ $loop->iteration }}">
+                                    <div class="__item">
+                                        <figure class="__image">
+                                            <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ url('storage/'.$item->url_gallery) }}" alt="demo" />
+
+                                            <div class="__content">
+                                                <h5 class="__content__title">{{ $item->name }}</h5>
+                                            </div>
+
+                                            <a class="__link" data-fancybox="gallery" href="{{ url('storage/'.$item->url_gallery) }}"></a>
+                                        </figure>
+                                    </div>
+                                </div>
+                            @endforeach
+                            <!-- end item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
+    @endsection
+
+    @push('style')
+         <!-- Common styles
         ================================================== -->
         <link rel="stylesheet" href="{{ asset('css/style.min.css') }}" type="text/css">
-
+    @endpush
+    @push('script')
         <!-- Load lazyLoad scripts
         ================================================== -->
         <script>
@@ -67,43 +109,4 @@
             }(window, document));
 
         </script>
-
-        <!-- start section -->
-        <section class="section">
-            <div class="container">
-
-                <div class="gallery gallery--style-1">
-                    <div class="__inner">
-                        <div class="row  js-isotope" data-isotope-options='{
-              "itemSelector": ".js-isotope__item",
-              "transitionDuration": "0.8s",
-              "percentPosition": "true",
-              "masonry": { "columnWidth": ".js-isotope__sizer" }
-             }'>
-
-                            <div class="col-12 col-sm-6 col-lg-4  js-isotope__sizer"></div>
-
-                            <!-- start item -->
-                            @foreach ($gallery as $item)
-                                <div class="col-12 col-sm-6 col-lg-4  js-isotope__item  category-{{ $loop->iteration }}">
-                                    <div class="__item">
-                                        <figure class="__image">
-                                            <img class="lazy" src="{{ asset('img/blank.gif') }}" data-src="{{ url('storage/'.$item->url_gallery) }}" alt="demo" />
-
-                                            <div class="__content">
-                                                <h5 class="__content__title">{{ $item->name }}</h5>
-                                            </div>
-
-                                            <a class="__link" data-fancybox="gallery" href="{{ url('storage/'.$item->url_gallery) }}"></a>
-                                        </figure>
-                                    </div>
-                                </div>
-                            @endforeach
-                            <!-- end item -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- end section -->
-    @endsection
+    @endpush

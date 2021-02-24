@@ -21,75 +21,8 @@
 
 <!-- start main -->
 <main role="main">
-    <!-- Common styles
-    ================================================== -->
-    <link rel="stylesheet" href="{{ asset('css/style.min.css') }}" type="text/css">
-
-    <!-- Load lazyLoad scripts
-    ================================================== -->
-    <script>
-        (function(w, d) {
-            var m = d.getElementsByTagName('main')[0],
-                s = d.createElement("script"),
-                v = !("IntersectionObserver" in w) ? "8.17.0" : "10.19.0",
-                o = {
-                    elements_selector: ".lazy",
-                    data_src: 'src',
-                    data_srcset: 'srcset',
-                    threshold: 500,
-                    callback_enter: function(element) {
-
-                    },
-                    callback_load: function(element) {
-                        element.removeAttribute('data-src')
-
-                        oTimeout = setTimeout(function() {
-                            clearTimeout(oTimeout);
-
-                            AOS.refresh();
-                        }, 1000);
-                    },
-                    callback_set: function(element) {
-
-                    },
-                    callback_error: function(element) {
-                        element.src =
-                            "https://placeholdit.imgix.net/~text?txtsize=21&txt=Image%20not%20load&w=200&h=200";
-                    }
-                };
-            s.type = 'text/javascript';
-            s.async =
-            true; // This includes the script as async. See the "recipes" section for more information about async loading of LazyLoad.
-            s.src = "https://cdn.jsdelivr.net/npm/vanilla-lazyload@" + v + "/dist/lazyload.min.js";
-            m.appendChild(s);
-            // m.insertBefore(s, m.firstChild);
-            w.lazyLoadOptions = o;
-        }(window, document));
-
-    </script>
-
     <!-- start section -->
     <section class="section">
-        {{-- <div class="decor-el decor-el--1" data-jarallax-element="-70" data-speed="0.2">
-            <img class="lazy" width="286" height="280" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/decor-el_1.jpg') }}" alt="demo" />
-        </div>
-
-        <div class="decor-el decor-el--2" data-jarallax-element="-70" data-speed="0.2">
-            <img class="lazy" width="99" height="88" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/decor-el_2.jpg') }}" alt="demo" />
-        </div>
-
-        <div class="decor-el decor-el--3" data-jarallax-element="-70" data-speed="0.2">
-            <img class="lazy" width="115" height="117" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/decor-el_3.jpg') }}" alt="demo" />
-        </div>
-
-        <div class="decor-el decor-el--4" data-jarallax-element="-70" data-speed="0.2">
-            <img class="lazy" width="84" height="76" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/decor-el_4.jpg') }}" alt="demo" />
-        </div>
-
-        <div class="decor-el decor-el--5" data-jarallax-element="-70" data-speed="0.2">
-            <img class="lazy" width="248" height="309" src="{{ asset('img/blank.gif') }}" data-src="{{ asset('img/decor-el_5.jpg') }}" alt="demo" />
-        </div> --}}
-
         <div class="container">
 
             <!-- start goods catalog -->
@@ -174,7 +107,6 @@
                         <nav aria-label="Page navigation example">
                             {{ $goats->links('vendor.pagination.custom') }}
                         </nav>
-                        {{-- {{ $data->links('vendor.pagination.custom') }} --}}
                         <!-- end pagination -->
                     </div>
                 </div>
@@ -187,3 +119,54 @@
 </main>
 <!-- end main -->
 @endsection
+
+@push('style')
+    <!-- Common styles
+    ================================================== -->
+    <link rel="stylesheet" href="{{ asset('css/style.min.css') }}" type="text/css">
+@endpush
+
+@push('script')
+    <!-- Load lazyLoad scripts
+    ================================================== -->
+    <script>
+        (function(w, d) {
+            var m = d.getElementsByTagName('main')[0],
+                s = d.createElement("script"),
+                v = !("IntersectionObserver" in w) ? "8.17.0" : "10.19.0",
+                o = {
+                    elements_selector: ".lazy",
+                    data_src: 'src',
+                    data_srcset: 'srcset',
+                    threshold: 500,
+                    callback_enter: function(element) {
+
+                    },
+                    callback_load: function(element) {
+                        element.removeAttribute('data-src')
+
+                        oTimeout = setTimeout(function() {
+                            clearTimeout(oTimeout);
+
+                            AOS.refresh();
+                        }, 1000);
+                    },
+                    callback_set: function(element) {
+
+                    },
+                    callback_error: function(element) {
+                        element.src =
+                            "https://placeholdit.imgix.net/~text?txtsize=21&txt=Image%20not%20load&w=200&h=200";
+                    }
+                };
+            s.type = 'text/javascript';
+            s.async =
+            true; // This includes the script as async. See the "recipes" section for more information about async loading of LazyLoad.
+            s.src = "https://cdn.jsdelivr.net/npm/vanilla-lazyload@" + v + "/dist/lazyload.min.js";
+            m.appendChild(s);
+            // m.insertBefore(s, m.firstChild);
+            w.lazyLoadOptions = o;
+        }(window, document));
+
+    </script>
+@endpush

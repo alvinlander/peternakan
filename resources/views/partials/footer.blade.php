@@ -67,7 +67,7 @@
                         </p>
 
                         <p>
-                            <a href="tel:{{ $info->phone }}" style="text-decoration: none">{{ $info->phone }}</a>
+                            <a href="https://wa.me/{{ $info->phone }}" style="text-decoration: none">{{ $info->phone }}</a>
                         </p>
 
                         <p>
@@ -87,10 +87,7 @@
         <div class="row align-items-lg-end justify-content-lg-between copyright">
             <div class="col-12 col-lg-6">
                 <div class="footer__item">
-                    <span class="__copy">© 2019, AgroTheme by <a class="__dev"
-                            href="https://themeforest.net/user/artureanec" target="_blank">Artureanec</a> | <a
-                            href="#">Privacy Policy</a> |
-                        <a href="#">Sitemap</a></span>
+                    <span class="__copy">© 2021, Trisula Joyo Farm </span>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ class ProductController extends Controller
     {
         $information = Information::first();
         $category = Category::with('goats')->get();
-        $goats = Goat::paginate(2);
+        $goats = Goat::paginate(9);
         // dd($goats);
         return view('shop_catalog')->with([
             'info'=>$information,
@@ -26,7 +26,7 @@ class ProductController extends Controller
         $information = Information::first();
         $category = Category::with('goats')->get();
         $searchBySlug = Category::whereSlug($slug)->first();
-        $goats = Goat::where('category_id',$searchBySlug->id)->paginate(2);
+        $goats = Goat::where('category_id',$searchBySlug->id)->paginate(9);
         return view('shop_catalog')->with([
             'info'=>$information,
             'category'=>$category,
