@@ -162,7 +162,7 @@
             <div class="d-none d-lg-block">
                 <!-- Diganti?? -->
                 <img id="bg-img-1" class="img-fluid lazy" src="{{ asset('img/blank.gif') }}"
-                    data-src="{{ asset('img/background_word.png') }}" alt="demo" />
+                    data-src="{{ asset('img/background_word.svg') }}" alt="demo" />
             </div>
 
             <div class="container">
@@ -219,7 +219,7 @@
                                         <div class="d-table-cell align-middle">
                                             <i class="__ico">
                                                 <img class="img-fluid  lazy" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/ico/unit_terjual_icons.png') }}"
+                                                    data-src="{{ asset('img/ico/unit_terjual_icons.svg') }}"
                                                     alt="demo" />
                                             </i>
                                         </div>
@@ -241,7 +241,7 @@
                                         <div class="d-table-cell align-middle">
                                             <i class="__ico">
                                                 <img class="img-fluid  lazy" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/ico/kambing_tersedia_icons.png') }}"
+                                                    data-src="{{ asset('img/ico/kambing_tersedia_icons.svg') }}"
                                                     alt="demo" />
                                             </i>
                                         </div>
@@ -263,7 +263,7 @@
                                         <div class="d-table-cell align-middle">
                                             <i class="__ico">
                                                 <img class="img-fluid  lazy" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/ico/luas_peternakan_icons.png') }}"
+                                                    data-src="{{ asset('img/ico/luas_peternakan_icons.svg') }}"
                                                     alt="demo" />
                                             </i>
                                         </div>
@@ -271,7 +271,7 @@
                                         <div class="d-table-cell align-middle">
                                             <p class="__count js-count" data-from="0" data-to="{{ $info->farm_area }}">{{ $info->farm_area }}</p>
 
-                                            <p class="__title">Luas Peternakan</p>
+                                            <p class="__title">Luas Peternakan (Ha)</p>
                                         </div>
                                     </div>
                                 </div>
@@ -285,7 +285,7 @@
                                         <div class="d-table-cell align-middle">
                                             <i class="__ico">
                                                 <img class="img-fluid  lazy" src="{{ asset('img/blank.gif') }}"
-                                                    data-src="{{ asset('img/ico/jumlah_peternak_icons.png') }}"
+                                                    data-src="{{ asset('img/ico/jumlah_peternak_icons.svg') }}"
                                                     alt="demo" />
                                             </i>
                                         </div>
