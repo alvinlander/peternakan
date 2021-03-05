@@ -7,9 +7,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-7">
-                <h1 class="__title"><span>{{ $info->name }}</span> Catalog</h1>
+                <h1 style="color: white;" class="__title"><span>{{ $info->name }}</span> Catalog</h1>
 
-                <p>
+                <p style="color: white;">
                     Salah satu kepastian yang membuat nyaman pelanggan adalah produk kami yang
                     berkualitas
                 </p>
