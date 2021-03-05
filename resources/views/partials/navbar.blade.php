@@ -25,7 +25,7 @@
                                           </li>
 
                                           <li class="{{ request()->is('product','product/*') ? "active" : "" }}">
-                                                <a href="{{ url('/product') }}">Produk</a>
+                                                <a href="{{ url('/product') }}">Beli</a>
                                           </li>
 
                                           <li class="{{ request()->is('gallery') ? "active" : "" }}">

@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-7">
-                <h1 style="color: white;" class="__title"><span>{{ $info->name }}</span> Catalog</h1>
+                <h1 style="color: white;" class="__title"><span>{{ $info->name }}</span> KATALOG</h1>
 
                 <p style="color: white;">
                     Salah satu kepastian yang membuat nyaman pelanggan adalah produk kami yang
@@ -66,7 +66,7 @@
                                             <div class="__item">
                                                 <figure class="__image">
                                                     <img class="lazy" width="188" src="{{ asset('img/blank.gif') }}"
-                                                        data-src="{{ url('storage/'.$goat->img_goat)}}" alt="demo" />
+                                                        data-src="{{ $goat->img_goat}}" alt="demo" />
                                                 </figure>
 
                                                 <div class="__content">
@@ -86,8 +86,8 @@
                                                     </div>
 
                                                     <a class="custom-btn custom-btn--medium custom-btn--style-1"
-                                                    href="{{ "https://wa.me/".$info->phone."?text=Saya tertarik ingin bertanya kambing ".$goat->name." jenis ".$goat->category->name.". Terima kasih 😊" }}" target="_blank"><i
-                                                            class="fontello-shopping-bag"></i>Beli</a>
+                                                    href="{{ route('product.detail',$goat->slug) }}"><i
+                                                            class="fontello-shopping-bag"></i>Detail</a>
                                                 </div>
                                             </div>
                                         </div>

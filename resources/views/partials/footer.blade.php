@@ -8,7 +8,7 @@
         </div>
 
         <center>
-            <a href="{{ url('/contact') }}">
+            <a href="https://wa.me/{{ $info->phone }}?text=Saya ingin bertanya tentang Suka Ternak." target="_blank">
             <button class="custom-btn custom-btn--medium custom-btn--style-3 contact-form wide" type="submit"
                 role="button">Hubungi Kami</button>
             </a>
@@ -45,10 +45,10 @@
                             </div>
 
                             <div class="col-6 col-sm-4">
-                                <h5 class="footer__item__title h6">Shop</h5>
+                                <h5 class="footer__item__title h6">Belanja</h5>
 
                                 <ul>
-                                    <li ><a href="{{ url('/product') }}">Katalog</a></li>
+                                    <li ><a href="{{ url('/product') }}">Beli</a></li>
                                     <li><a href="{{ url('/contact') }}">Hubungi Kami</a></li>
                                 </ul>
                             </div>
@@ -59,7 +59,7 @@
 
             <div class="col-12 col-md col-lg-4">
                 <div class="footer__item">
-                    <h5 class="footer__item__title h6">Contacts</h5>
+                    <h5 class="footer__item__title h6">Kontak</h5>
 
                     <address>
                         <p>
@@ -67,7 +67,7 @@
                         </p>
 
                         <p>
-                            <a href="https://wa.me/{{ $info->phone }}" style="text-decoration: none">{{ $info->phone }}</a>
+                            <a href="https://wa.me/{{ $info->phone }}?text=Saya ingin bertanya tentang Suka Ternak." target="_blank" style="text-decoration: none">{{ $info->phone }}</a>
                         </p>
 
                         <p>
@@ -87,7 +87,7 @@
         <div class="row align-items-lg-end justify-content-lg-between copyright">
             <div class="col-12 col-lg-6">
                 <div class="footer__item">
-                    <span class="__copy">© 2021, Trisula Joyo Farm </span>
+                    <span class="__copy">© 2021, Made with ❤ by Ada Apps </span>
                 </div>
             </div>
         </div>

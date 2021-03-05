@@ -50,7 +50,7 @@
 
 
                                     <p>
-                                        <a href="https://wa.me/{{ $info->phone }}" style="text-decoration: none">{{ $info->phone }}</a>
+                                        <a href="https://wa.me/{{ $info->phone }}?text=Saya ingin bertanya tentang suka ternak" style="text-decoration: none">{{ $info->phone }}</a>
                                     </p>
                                 </div>
                             </div>

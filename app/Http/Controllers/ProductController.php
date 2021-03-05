@@ -33,4 +33,14 @@ class ProductController extends Controller
             'goats' => $goats
         ]);
     }
+
+    public function detail($slug)
+    {
+        $information = Information::first();
+        $goat = Goat::with('category')->where('slug',$slug)->first();
+        return view('detail')->with([
+            'info' => $information,
+            'goat' => $goat
+        ]);
+    }
 }

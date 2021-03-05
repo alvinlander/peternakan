@@ -17,9 +17,9 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-10 col-xl-8">
-                            <div class="__name">PETERNAKAN</div>
-
-                            <h2 class="__title text-white">{{ $info->name }}</h2>
+                            <div class="d-flex justify-content-center">
+                                <h2 class="__title text-white ">{{ $info->name }}</h2>
+                            </div>
 
                             <p class="text-center">
                                 {{ $info->short_desc }}
@@ -170,7 +170,7 @@
                     <div class="col-12 col-lg-4">
                         <div data-aos="fade-left" data-aos-delay="400" data-aos-duration="500" ddata-aos-offset="100">
                             <div class="section-heading">
-                                <h2 class="__title">Tentang <br><span>Trisula Joyo</span></h2>
+                                <h2 class="__title">Tentang <br><span>{{ $info->name }}</span></h2>
                             </div>
 
                             <p class="d-none d-sm-block">

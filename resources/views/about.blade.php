@@ -105,7 +105,7 @@
                                         <div class="d-table-cell align-middle">
                                             <p class="__count js-count" data-from="0" data-to="{{ $info->farm_area }}">{{ $info->farm_area }}</p>
 
-                                            <p class="__title">Luas Peternakan</p>
+                                            <p class="__title">Luas Peternakan (Ha)</p>
                                         </div>
                                     </div>
                                 </div>

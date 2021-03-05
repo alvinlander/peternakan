@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('product',[ProductController::class,'index'])->name('product.index');
 Route::get('product/{slug}',[ProductController::class,'show']);
+Route::get('product/detail/{slug}',[ProductController::class,'detail'])->name('product.detail');
 Route::get('about',[AboutController::class,'index'])->name('about.index');
 Route::get('gallery',[GalleryController::class,'index'])->name('gallery.index');
 Route::get('contact',[ContactController::class,'index'])->name('contact.index');

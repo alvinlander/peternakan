@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 <head>
-      <title>Trisula Joyo Farm</title>
+      <title>{{ $info->name ?? "Suka Ternak"}}</title>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
       <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
